@@ -24,7 +24,13 @@
     name: syslinux
     state: latest
 
-- name: install syslinux
+- name: install kick server
   yum:
     name: pykickstart
     state: latest
+
+- name: install tftp server
+  yum: 
+    name: tftp-server
+    state: latest
+
