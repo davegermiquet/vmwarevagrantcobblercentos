@@ -1,0 +1,4 @@
+---
+    - name: update cobbler configurations
+      template: src=settings.j2  dest=/etc/cobbler/settings  backup=yes
+
