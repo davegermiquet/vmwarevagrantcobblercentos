@@ -1,0 +1,9 @@
+---
+- hosts: all
+  sudo: yes
+  gather_facts: yes #IMPORTANT
+  remote_user: root
+  roles:
+    - epel-repository
+    - install-applications
+    - setup-application
