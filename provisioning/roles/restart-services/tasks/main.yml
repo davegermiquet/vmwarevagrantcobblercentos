@@ -1,4 +1,7 @@
 ---
+- name: enable and start rsyncd.service
+  service: name=dnsmasq  state=restarted enabled=yes
+
 - name: Apache should be enabled
   service: name=httpd state=started enabled=yes
 
@@ -8,11 +11,15 @@
 - name: enable and start rsyncd.service
   service: name=rsyncd state=started enabled=yes
 
-- name: enable and start rsyncd.service
-  service: name=dnsmasq  state=started enabled=yes
-
 - name: Cobbler should be enabled
-  service: name=cobblerd state=started enabled=yes
+  service: name=cobblerd state=restarted enabled=yes
+
+- name: wait for restart
+  pause: 
+    seconds: 10
 
 - name: sync cobbler
   command: cobbler sync
+
+- name: enable and start rsyncd.service
+  service: name=dnsmasq  state=restarted enabled=yes
