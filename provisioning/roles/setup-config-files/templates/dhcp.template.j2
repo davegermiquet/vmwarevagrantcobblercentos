@@ -1,0 +1,22 @@
+subnet 192.168.30.0  netmask 255.255.255.0 {
+     option routers             192.168.30.250;
+     option domain-name-servers 192.168.30.250;
+     option subnet-mask         255.255.255.0;
+     range dynamic-bootp        192.168.30.80 192.168.30.140;
+     default-lease-time         21700;
+     max-lease-time             43100;
+     next-server                $next_server;
+
+     class "pxeclients" {
+          match if substring (option vendor-class-identifier, 0, 9) = "PXEClient";
+          if option pxe-system-type = 00:02 {
+                  filename "ia64/elilo.efi";
+          } else if option pxe-system-type = 00:06 {
+                  filename "grub/grub-x86.efi";
+          } else if option pxe-system-type = 00:07 {
+                  filename "grub/grub-x86_64.efi";
+          } else {
+                  filename "pxelinux.0";
+          }
+     } 
+}

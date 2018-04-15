@@ -1,0 +1,10 @@
+read-ethers
+interface=eth1
+addn-hosts = /var/lib/cobbler/cobbler_hosts
+dhcp-range=192.168.30.80,192.168.30.140
+dhcp-option=3,$next_server
+dhcp-lease-max=1000
+dhcp-authoritative
+dhcp-boot=pxelinux.0
+dhcp-boot=net:normalarch,pxelinux.0
+dhcp-boot=net:ia64,$elilo}
