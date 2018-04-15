@@ -2,3 +2,16 @@
     - name: update cobbler configurations
       template: src=settings.j2  dest=/etc/cobbler/settings  backup=yes
 
+    - name: update cobbler configurations
+      template: src=modules.conf.j2  dest=/etc/cobbler/modules.conf  backup=yes
+
+    - name: update cobbler configurations
+      template: src=dnsmasq.template.j2 dest=/etc/cobbler/dnsmasq.template backup=yes
+   
+    - name: update cobbler configurations
+      template: src=dhcp.template.j2 dest=/etc/cobbler/dhcp.template backup=yes
+
+    - name: Restart network service for interface eth0
+      service:
+      name: cobblerd
+      state: restarted

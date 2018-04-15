@@ -1,3 +1,5 @@
 ---
 dns_server : 8.8.8.8
 ip_address_for_cobbler : "{{ ansible_eth1.ipv4.address }}"
+dhcp_module : manage_dnsmasq
+dns_module : manage_dnsmasq
