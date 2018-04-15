@@ -2,5 +2,17 @@
 - name:  copy cobbler script over
   copy: src=setupcobbler.sh  dest=/root/cobbler.sh  mode=1777 backup=yes
 
+- name:  copy cobbler script over
+  copy: src=setupprofiles.sh  dest=/root/setupprofile.sh  mode=1777 backup=yes
+
 - name: import distro into cobbler 
   command: bash /root/cobbler.sh
+
+- name: update cobbler configurations
+  template: src=CentOS7.ks.j2 dest=/root/CentOS7.ks backup=yes
+
+- name: import distro into cobbler 
+  command: bash /root/setupprofile.sh
+
+- name: sync cobbler
+  command: cobbler sync
