@@ -8,3 +8,4 @@
     - install-applications
     - setup-application
     - setup-config-files
+    - restart-services

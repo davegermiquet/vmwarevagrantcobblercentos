@@ -34,3 +34,7 @@
     name: tftp-server
     state: latest
 
+- name: install xinetd server
+  yum: 
+    name: xinetd
+    state: latest
