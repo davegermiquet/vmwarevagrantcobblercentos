@@ -9,6 +9,6 @@
     - install-applications
     - setup-application
     - setup-config-files
-    - restart-services
     - setup-firewall-rules
     - setup-profiles
+    - restart-services

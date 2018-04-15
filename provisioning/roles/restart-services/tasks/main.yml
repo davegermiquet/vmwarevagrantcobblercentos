@@ -11,3 +11,5 @@
 - name: Cobbler should be enabled
   service: name=cobblerd state=started enabled=yes
 
+- name: sync cobbler
+  command: cobbler sync

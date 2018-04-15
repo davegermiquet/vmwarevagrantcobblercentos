@@ -1,8 +1,8 @@
-subnet 192.168.30.0  netmask 255.255.255.0 {
-     option routers             192.168.30.250;
-     option domain-name-servers 192.168.30.250;
+subnet 192.168.20.0  netmask 255.255.255.0 {
+     option routers             192.168.20.250;
+     option domain-name-servers 192.168.20.250;
      option subnet-mask         255.255.255.0;
-     range dynamic-bootp        192.168.30.80 192.168.30.140;
+     range dynamic-bootp        192.168.20.80 192.168.20.140;
      default-lease-time         21700;
      max-lease-time             43100;
      next-server                $next_server;

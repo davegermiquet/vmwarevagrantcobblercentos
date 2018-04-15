@@ -1,5 +1,5 @@
 ---
-- name: install the latest version of Apache
+- name: install the latest version of  cobbler
   yum:
     name: cobbler
     state: latest
@@ -37,4 +37,9 @@
 - name: install xinetd server
   yum: 
     name: xinetd
+    state: latest
+
+- name: install net tools
+  yum: 
+    name: net-tools
     state: latest

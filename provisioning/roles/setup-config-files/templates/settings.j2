@@ -27,7 +27,7 @@ default_kickstart: /var/lib/cobbler/kickstarts/default.ks
 default_name_servers: [{{dns_server}}]
 default_name_servers_search: ['cobbler.local']
 default_ownership: [admin]
-default_password_crypted: 
+default_password_crypted: "$1$RQ7GZWqe$kK5zj3yrK6d7H14e12Tk7."
 default_template_type: cheetah
 default_virt_bridge: xenbr0
 default_virt_disk_driver: raw
@@ -57,8 +57,8 @@ ldap_tls: 1
 ldap_tls_cacertfile: ''
 ldap_tls_certfile: ''
 ldap_tls_keyfile: ''
-manage_dhcp: 0
-manage_dns: 0
+manage_dhcp: 1
+manage_dns: 1
 manage_forward_zones: []
 manage_reverse_zones: []
 manage_rsync: 1
