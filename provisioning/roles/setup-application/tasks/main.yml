@@ -20,10 +20,14 @@
     name: cobblerd
     state: started
 
+
 - name: enable service httpd and ensure it is not masked
   systemd:
     name: httpd
     state: started
+
+- name: get cobber loads (need to configure for one time)
+  command: cobbler get-loaders
 
 - name: Download centos 7 for distro adding
   get_url:

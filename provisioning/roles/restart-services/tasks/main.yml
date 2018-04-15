@@ -8,6 +8,9 @@
 - name: enable and start rsyncd.service
   service: name=rsyncd state=started enabled=yes
 
+- name: enable and start rsyncd.service
+  service: name=dnsmasq  state=started enabled=yes
+
 - name: Cobbler should be enabled
   service: name=cobblerd state=started enabled=yes
 
