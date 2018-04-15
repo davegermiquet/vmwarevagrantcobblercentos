@@ -1,0 +1,27 @@
+---
+- name: Firewalld for RHEL 7 based systems, don't make sense for certain
+  firewalld: service={{item}} permanent=true state=enabled
+  with_items:
+         - http
+         - https
+         - tftp
+         - dhcp
+         - dhcpv6
+         - snmp
+  when:
+    - ansible_distribution_major_version == "7"
+  notify:
+   - restart firewalld
+
+- name: Firewalld for RHEL 7 based systems, don't make sense for certain
+  firewalld: port={{item}} permanent=true state=enabled
+  with_items:
+         - 25150/tcp
+         - 25151/tcp
+         - 25150/udp
+         - 25151/udp
+  when:
+    - ansible_distribution_major_version == "7"
+  notify:
+    - restart firewalld
+

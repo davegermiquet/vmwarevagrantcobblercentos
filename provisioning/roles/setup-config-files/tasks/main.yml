@@ -11,6 +11,12 @@
     - name: update cobbler configurations
       template: src=dhcp.template.j2 dest=/etc/cobbler/dhcp.template backup=yes
 
+    - name: enable rsync over xinet deamon
+      copy: src=rsync  dest=/etc/xinetd.d/rsync backup=yes
+
+    - name:  enable tftp server
+      copy:  src=tftp  dest=/etc/xinetd.d/tftp   backup=yes
+
     - name: Restart network service for interface eth0
       service:
       name: cobblerd

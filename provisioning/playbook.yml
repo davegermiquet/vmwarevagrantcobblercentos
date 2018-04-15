@@ -4,8 +4,11 @@
   gather_facts: yes #IMPORTANT
   remote_user: root
   roles:
+    - common
     - epel-repository
     - install-applications
     - setup-application
     - setup-config-files
     - restart-services
+    - setup-firewall-rules
+    - setup-profiles

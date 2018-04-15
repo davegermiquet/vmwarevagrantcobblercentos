@@ -1,0 +1,6 @@
+---
+- name:  copy cobbler script over
+  copy: src=setupcobbler.sh  dest=/root/cobbler.sh  mode=1777 backup=yes
+
+- name: import distro into cobbler 
+  command: bash /root/cobbler.sh

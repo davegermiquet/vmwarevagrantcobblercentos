@@ -25,3 +25,17 @@
     name: httpd
     state: started
 
+- name: Download centos 7 for distro adding
+  get_url:
+    url: http://centos.mirror.iweb.ca/7/isos/x86_64/CentOS-7-x86_64-Minimal-1708.iso
+    dest: /root/centos7.iso
+    mode: 0775
+
+- name: Mount centos 7 iso
+  mount:
+    path: /mnt/iso/
+    src: /root/centos7.iso
+    fstype: iso9660
+    state: mounted
+
+
