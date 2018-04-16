@@ -17,7 +17,7 @@
     - name:  enable tftp server
       copy:  src=tftp  dest=/etc/xinetd.d/tftp   backup=yes
 
-    - name: Restart network service for interface eth0
+    - name: Restart network service for interface 
       service:
-      name: cobblerd
-      state: restarted
+        name: cobblerd
+        state: restarted

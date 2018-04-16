@@ -6,9 +6,4 @@
   roles:
     - common
     - epel-repository
-    - install-applications
-    - setup-application
-    - setup-config-files
-    - setup-firewall-rules
-    - setup-profiles
-    - restart-services
+    - cobbler

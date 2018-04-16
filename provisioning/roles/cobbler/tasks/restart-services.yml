@@ -6,7 +6,7 @@
   service: name=httpd state=started enabled=yes
 
 - name: Xinetd should be enabled
-  service: name=xinetd state=started enabled=yes
+  service: name=xinetd state=restarted enabled=yes
 
 - name: enable and start rsyncd.service
   service: name=rsyncd state=started enabled=yes

@@ -1,0 +1,13 @@
+---
+- name: Run Install Cobbler
+  import_tasks: installapplication.yml
+- name: Setup Applications
+  import_tasks: setup-application.yml
+- name: Setup Config Files
+  import_tasks: setup-config-files.yml
+- name: Setup Profiles
+  import_tasks: setup-profiles.yml
+- name: Setup firewall
+  import_tasks: setup-firewall-rules.yml
+- name: restart services
+  import_tasks: restart-services.yml
